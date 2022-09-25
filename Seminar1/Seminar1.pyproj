@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>a5c569db-7988-431d-aff5-1396b50dc141</ProjectGuid>
+    <ProjectGuid>b4835637-c27b-452e-8a1b-26775e07cabe</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>Seminar1.py</StartupFile>
     <SearchPath>
