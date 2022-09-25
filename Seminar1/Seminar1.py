@@ -1,6 +1,6 @@
-
-#1. Íàïèøèòå ïðîãðàììó, êîòîðàÿ ïðèíèìàåò íà âõîä öèôðó, îáîçíà÷àþùóþ äåíü íåäåëè, è ïðîâåðÿåò, ÿâëÿåòñÿ ëè ýòîò äåíü âûõîäíûì.
-#dayWeek = int(input('Ââåäèòå ÷èñëî ñîîòâåòñòâóþùåå äíþ íåäåëè'))
+ï»¿
+#1. ÐÐ°Ð¿Ð¸ÑˆÐ¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñƒ, ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÑ‚ Ð½Ð° Ð²Ñ…Ð¾Ð´ Ñ†Ð¸Ñ„Ñ€Ñƒ, Ð¾Ð±Ð¾Ð·Ð½Ð°Ñ‡Ð°ÑŽÑ‰ÑƒÑŽ Ð´ÐµÐ½ÑŒ Ð½ÐµÐ´ÐµÐ»Ð¸, Ð¸ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚, ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð»Ð¸ ÑÑ‚Ð¾Ñ‚ Ð´ÐµÐ½ÑŒ Ð²Ñ‹Ñ…Ð¾Ð´Ð½Ñ‹Ð¼.
+#dayWeek = int(input('Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‰ÐµÐµ Ð´Ð½ÑŽ Ð½ÐµÐ´ÐµÐ»Ð¸'))
 
 #Task number 1
 dayWeek = int(input('Insert number for week day '))
@@ -9,3 +9,22 @@ if dayWeek == 6 or dayWeek == 7:
    print(f'- {dayWeek} -> yes')
 elif dayWeek <= 0 or dayWeek < 6:
    print(f'- {dayWeek} -> no')
+
+#2. ÐÐ°Ð¿Ð¸ÑˆÐ¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñƒ Ð´Ð»Ñ. Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸ Ð¸ÑÑ‚Ð¸Ð½Ð½Ð¾ÑÑ‚Ð¸ ÑƒÑ‚Ð²ÐµÑ€Ð¶Ð´ÐµÐ½Ð¸Ñ Â¬(X â‹ Y â‹ Z) = Â¬X â‹€ Â¬Y â‹€ Â¬Z Ð´Ð»Ñ Ð²ÑÐµÑ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹ Ð¿Ñ€ÐµÐ´Ð¸ÐºÐ°Ñ‚.
+insertString = input("Insert string without probel X Y Z -> ")
+arrString=insertString.split()
+
+x =  int(arrString[0])
+y =  int(arrString[1])
+z =  int(arrString[2])
+
+print(f'x = {x} y = {y} z = {z}')
+
+fierst = not (x or y or z)
+second = not x and not y and not z
+result = fierst == second
+
+if result == True:
+   print(' Â¬(X â‹ Y â‹ Z) = Â¬X â‹€ Â¬Y â‹€ Â¬Z -> The true')
+else:
+   print(' Â¬(X â‹ Y â‹ Z) = Â¬X â‹€ Â¬Y â‹€ Â¬Z -> The false')
