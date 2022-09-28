@@ -1,20 +1,20 @@
 # coding=windows-1251
 import random
-# Метод проверки целого числа
+# РњРµС‚РѕРґ РїСЂРѕРІРµСЂРєРё С†РµР»РѕРіРѕ С‡РёСЃР»Р°
 def CheckInputInt(testInput):
     try:
         return int(testInput)
     except ValueError:
         print('Incorrect data entry')
         return None
-# Метод проверки ввода вещественного числа
+# РњРµС‚РѕРґ РїСЂРѕРІРµСЂРєРё РІРІРѕРґР° РІРµС‰РµСЃС‚РІРµРЅРЅРѕРіРѕ С‡РёСЃР»Р°
 def CheckInputFloat(testInput):
     try:
         return float(testInput)
     except ValueError:
         print('Incorrect data entry')
         return None
-# Метод поиска суммы цифр входящих в целое число
+# РњРµС‚РѕРґ РїРѕРёСЃРєР° СЃСѓРјРјС‹ С†РёС„СЂ РІС…РѕРґСЏС‰РёС… РІ С†РµР»РѕРµ С‡РёСЃР»Рѕ
 def findSumDigit(chekDidit):
     sumDigit = 0
     while chekDidit != 0:
@@ -24,14 +24,14 @@ def findSumDigit(chekDidit):
             sumDigit += chekDidit % 10
         chekDidit = chekDidit // 10
     return sumDigit
-# Метод поиска суммы цифр в вводимой строке
+# РњРµС‚РѕРґ РїРѕРёСЃРєР° СЃСѓРјРјС‹ С†РёС„СЂ РІ РІРІРѕРґРёРјРѕР№ СЃС‚СЂРѕРєРµ
 def checkSumInDigitString(checkString):
     result=0
     for simbol in checkString:
         if simbol!='.' and simbol!='-':
             result+=CheckInputInt(simbol)
     return result
-# Числовое решение задачи N1 (до 4х цифр после запятой)
+# Р§РёСЃР»РѕРІРѕРµ СЂРµС€РµРЅРёРµ Р·Р°РґР°С‡Рё N1 (РґРѕ 4С… С†РёС„СЂ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№)
 print('Task 1 seminar 2 fierst')
 inputString = input('Enter number >> ')
 inputDigit=CheckInputFloat(inputString)
@@ -39,15 +39,15 @@ inputDigit=CheckInputFloat(inputString)
 if inputDigit!=None:
     intPast = int(inputDigit)
     floatPast = round(inputDigit%1,4)
-    # Обработка целой части числа
+    # РћР±СЂР°Р±РѕС‚РєР° С†РµР»РѕР№ С‡Р°СЃС‚Рё С‡РёСЃР»Р°
     sumDigit=0
     sumDigit+=findSumDigit(intPast)
-    # Обработка дробной части числа
+    # РћР±СЂР°Р±РѕС‚РєР° РґСЂРѕР±РЅРѕР№ С‡Р°СЃС‚Рё С‡РёСЃР»Р°
     floatPast = int(floatPast*10000)
     sumDigit+=findSumDigit(floatPast)
     print(f'Rezult >> {sumDigit}')
 
-# Строковое решение задачи N1
+# РЎС‚СЂРѕРєРѕРІРѕРµ СЂРµС€РµРЅРёРµ Р·Р°РґР°С‡Рё N1
 print('Task 1 seminar 2 second')
 inputString = input('Enter number >> ')
 if CheckInputFloat(inputString)!=None:
@@ -55,7 +55,7 @@ if CheckInputFloat(inputString)!=None:
 else:
     print('Incorrect data entry')
 
-# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+# РќР°РїРёС€РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ, РєРѕС‚РѕСЂР°СЏ РїСЂРёРЅРёРјР°РµС‚ РЅР° РІС…РѕРґ С‡РёСЃР»Рѕ N Рё РІС‹РґР°РµС‚ РЅР°Р±РѕСЂ РїСЂРѕРёР·РІРµРґРµРЅРёР№ С‡РёСЃРµР» РѕС‚ 1 РґРѕ N.
 print('Task 2')
 inputDigit=input('Enter integer digit ')
 inputDigit = CheckInputInt(inputDigit)
@@ -67,7 +67,7 @@ if inputDigit!=None:
         print(factorial, end=" ")
     print()
 
-#3. Задайте список из n чисел, заполненный по формуле (1 + 1/n) ** n и выведите на экран их сумму.
+#3. Р—Р°РґР°Р№С‚Рµ СЃРїРёСЃРѕРє РёР· n С‡РёСЃРµР», Р·Р°РїРѕР»РЅРµРЅРЅС‹Р№ РїРѕ С„РѕСЂРјСѓР»Рµ (1 + 1/n) ** n Рё РІС‹РІРµРґРёС‚Рµ РЅР° СЌРєСЂР°РЅ РёС… СЃСѓРјРјСѓ.
 
 print('Task 3') 
 insertNum=input('Enter number list >> ')
@@ -78,8 +78,8 @@ if insertNum!=None:
         numList.append(round((1 + 1 / i) ** i))
     print(f'n={insertNum}:{numList} -> {sum(numList)}')
 
-# 4. Задайте список из N элементов, заполненных числами из промежутка [-N, N].
-#  Найдите произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
+# 4. Р—Р°РґР°Р№С‚Рµ СЃРїРёСЃРѕРє РёР· N СЌР»РµРјРµРЅС‚РѕРІ, Р·Р°РїРѕР»РЅРµРЅРЅС‹С… С‡РёСЃР»Р°РјРё РёР· РїСЂРѕРјРµР¶СѓС‚РєР° [-N, N].
+#  РќР°Р№РґРёС‚Рµ РїСЂРѕРёР·РІРµРґРµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РЅР° СѓРєР°Р·Р°РЅРЅС‹С… РїРѕР·РёС†РёСЏС…. РџРѕР·РёС†РёРё С…СЂР°РЅСЏС‚СЃСЏ РІ С„Р°Р№Р»Рµ file.txt РІ РѕРґРЅРѕР№ СЃС‚СЂРѕРєРµ РѕРґРЅРѕ С‡РёСЃР»Рѕ.
 print('Task 4')    
 
 N=input('Enter number for create list [-N,N] >> ')
@@ -98,7 +98,7 @@ if N!=None:
     else:
            print('No correct entering position list!')
 
-#5 Реализуйте алгоритм перемешивания списка. Без функции shuffle из модуля random.
+#5 Р РµР°Р»РёР·СѓР№С‚Рµ Р°Р»РіРѕСЂРёС‚Рј РїРµСЂРµРјРµС€РёРІР°РЅРёСЏ СЃРїРёСЃРєР°. Р‘РµР· С„СѓРЅРєС†РёРё shuffle РёР· РјРѕРґСѓР»СЏ random.
 #10
 #-> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 #-> [0, 7, 6, 3, 4, 2, 9, 5, 1, 8]
@@ -117,5 +117,3 @@ if N!=None:
         numList[i]=numList[randomIndex]
         numList[randomIndex]=tempNumber
     print(f'-> {numList}')
-
-
