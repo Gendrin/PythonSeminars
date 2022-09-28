@@ -1,20 +1,26 @@
 # coding=windows-1251
 import random
-# РњРµС‚РѕРґ РїСЂРѕРІРµСЂРєРё С†РµР»РѕРіРѕ С‡РёСЃР»Р°
+
+
+# Метод проверки целого числа
 def CheckInputInt(testInput):
     try:
         return int(testInput)
     except ValueError:
         print('Incorrect data entry')
         return None
-# РњРµС‚РѕРґ РїСЂРѕРІРµСЂРєРё РІРІРѕРґР° РІРµС‰РµСЃС‚РІРµРЅРЅРѕРіРѕ С‡РёСЃР»Р°
+
+
+# Метод проверки ввода вещественного числа
 def CheckInputFloat(testInput):
     try:
         return float(testInput)
     except ValueError:
         print('Incorrect data entry')
         return None
-# РњРµС‚РѕРґ РїРѕРёСЃРєР° СЃСѓРјРјС‹ С†РёС„СЂ РІС…РѕРґСЏС‰РёС… РІ С†РµР»РѕРµ С‡РёСЃР»Рѕ
+
+
+# Метод поиска суммы цифр входящих в целое число
 def findSumDigit(chekDidit):
     sumDigit = 0
     while chekDidit != 0:
@@ -24,42 +30,46 @@ def findSumDigit(chekDidit):
             sumDigit += chekDidit % 10
         chekDidit = chekDidit // 10
     return sumDigit
-# РњРµС‚РѕРґ РїРѕРёСЃРєР° СЃСѓРјРјС‹ С†РёС„СЂ РІ РІРІРѕРґРёРјРѕР№ СЃС‚СЂРѕРєРµ
+
+
+# Метод поиска суммы цифр в вводимой строке
 def checkSumInDigitString(checkString):
-    result=0
+    result = 0
     for simbol in checkString:
-        if simbol!='.' and simbol!='-':
-            result+=CheckInputInt(simbol)
+        if simbol != '.' and simbol != '-':
+            result += CheckInputInt(simbol)
     return result
-# Р§РёСЃР»РѕРІРѕРµ СЂРµС€РµРЅРёРµ Р·Р°РґР°С‡Рё N1 (РґРѕ 4С… С†РёС„СЂ РїРѕСЃР»Рµ Р·Р°РїСЏС‚РѕР№)
+
+
+# Числовое решение задачи N1 (до 4х цифр после запятой)
 print('Task 1 seminar 2 fierst')
 inputString = input('Enter number >> ')
-inputDigit=CheckInputFloat(inputString)
+inputDigit = CheckInputFloat(inputString)
 
-if inputDigit!=None:
+if inputDigit != None:
     intPast = int(inputDigit)
-    floatPast = round(inputDigit%1,4)
-    # РћР±СЂР°Р±РѕС‚РєР° С†РµР»РѕР№ С‡Р°СЃС‚Рё С‡РёСЃР»Р°
-    sumDigit=0
-    sumDigit+=findSumDigit(intPast)
-    # РћР±СЂР°Р±РѕС‚РєР° РґСЂРѕР±РЅРѕР№ С‡Р°СЃС‚Рё С‡РёСЃР»Р°
-    floatPast = int(floatPast*10000)
-    sumDigit+=findSumDigit(floatPast)
+    floatPast = round(inputDigit % 1, 4)
+    # Обработка целой части числа
+    sumDigit = 0
+    sumDigit += findSumDigit(intPast)
+    # Обработка дробной части числа
+    floatPast = int(floatPast * 10000)
+    sumDigit += findSumDigit(floatPast)
     print(f'Rezult >> {sumDigit}')
 
-# РЎС‚СЂРѕРєРѕРІРѕРµ СЂРµС€РµРЅРёРµ Р·Р°РґР°С‡Рё N1
+# Строковое решение задачи N1
 print('Task 1 seminar 2 second')
 inputString = input('Enter number >> ')
-if CheckInputFloat(inputString)!=None:
+if CheckInputFloat(inputString) != None:
     print(f'Rezult >> {checkSumInDigitString(inputString)}')
 else:
     print('Incorrect data entry')
 
-# РќР°РїРёС€РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ, РєРѕС‚РѕСЂР°СЏ РїСЂРёРЅРёРјР°РµС‚ РЅР° РІС…РѕРґ С‡РёСЃР»Рѕ N Рё РІС‹РґР°РµС‚ РЅР°Р±РѕСЂ РїСЂРѕРёР·РІРµРґРµРЅРёР№ С‡РёСЃРµР» РѕС‚ 1 РґРѕ N.
+# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
 print('Task 2')
-inputDigit=input('Enter integer digit ')
+inputDigit = input('Enter integer digit ')
 inputDigit = CheckInputInt(inputDigit)
-if inputDigit!=None:
+if inputDigit != None:
     factorial = 1
     for i in range(inputDigit):
         i = i + 1
@@ -67,53 +77,53 @@ if inputDigit!=None:
         print(factorial, end=" ")
     print()
 
-#3. Р—Р°РґР°Р№С‚Рµ СЃРїРёСЃРѕРє РёР· n С‡РёСЃРµР», Р·Р°РїРѕР»РЅРµРЅРЅС‹Р№ РїРѕ С„РѕСЂРјСѓР»Рµ (1 + 1/n) ** n Рё РІС‹РІРµРґРёС‚Рµ РЅР° СЌРєСЂР°РЅ РёС… СЃСѓРјРјСѓ.
+# 3. Задайте список из n чисел, заполненный по формуле (1 + 1/n) ** n и выведите на экран их сумму.
 
-print('Task 3') 
-insertNum=input('Enter number list >> ')
-insertNum=CheckInputInt(insertNum)
-if insertNum!=None:
-    numList=[]
+print('Task 3')
+insertNum = input('Enter number list >> ')
+insertNum = CheckInputInt(insertNum)
+if insertNum != None:
+    numList = []
     for i in range(1, insertNum + 1):
         numList.append(round((1 + 1 / i) ** i))
     print(f'n={insertNum}:{numList} -> {sum(numList)}')
 
-# 4. Р—Р°РґР°Р№С‚Рµ СЃРїРёСЃРѕРє РёР· N СЌР»РµРјРµРЅС‚РѕРІ, Р·Р°РїРѕР»РЅРµРЅРЅС‹С… С‡РёСЃР»Р°РјРё РёР· РїСЂРѕРјРµР¶СѓС‚РєР° [-N, N].
-#  РќР°Р№РґРёС‚Рµ РїСЂРѕРёР·РІРµРґРµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РЅР° СѓРєР°Р·Р°РЅРЅС‹С… РїРѕР·РёС†РёСЏС…. РџРѕР·РёС†РёРё С…СЂР°РЅСЏС‚СЃСЏ РІ С„Р°Р№Р»Рµ file.txt РІ РѕРґРЅРѕР№ СЃС‚СЂРѕРєРµ РѕРґРЅРѕ С‡РёСЃР»Рѕ.
-print('Task 4')    
+# 4. Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+#  Найдите произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
+print('Task 4')
 
-N=input('Enter number for create list [-N,N] >> ')
-N=CheckInputInt(N)
-if N!=None:
+N = input('Enter number for create list [-N,N] >> ')
+N = CheckInputInt(N)
+if N != None:
     numList = []
-    for i in range(-N,N+1):
+    for i in range(-N, N + 1):
         numList.append(i)
     print(numList)
 
     positionOne = int(input('Enter positionOne numbers list >> '))
     positionTwo = int(input('Enter positionTwo numbers list >> '))
 
-    if positionOne<len(numList) and positionOne>0 and positionTwo < len(numList) and positionTwo>0:
-       print(numList[positionOne-1]*numList[positionTwo-1])
+    if positionOne < len(numList) and positionOne > 0 and positionTwo < len(numList) and positionTwo > 0:
+        print(numList[positionOne - 1] * numList[positionTwo - 1])
     else:
-           print('No correct entering position list!')
+        print('No correct entering position list!')
 
-#5 Р РµР°Р»РёР·СѓР№С‚Рµ Р°Р»РіРѕСЂРёС‚Рј РїРµСЂРµРјРµС€РёРІР°РЅРёСЏ СЃРїРёСЃРєР°. Р‘РµР· С„СѓРЅРєС†РёРё shuffle РёР· РјРѕРґСѓР»СЏ random.
-#10
-#-> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-#-> [0, 7, 6, 3, 4, 2, 9, 5, 1, 8]
+# 5 Реализуйте алгоритм перемешивания списка. Без функции shuffle из модуля random.
+# 10
+# -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# -> [0, 7, 6, 3, 4, 2, 9, 5, 1, 8]
 print('Task N5')
-N=input('Enter number for create list [0,N] >> ')
-N=CheckInputInt(N)
-if N!=None:
+N = input('Enter number for create list [0,N] >> ')
+N = CheckInputInt(N)
+if N != None:
     numList = []
     for i in range(N):
         numList.append(i)
     print(f'-> {numList}')
-    
+
     for i in range(N):
-        randomIndex=random.randrange(N)
-        tempNumber=numList[i]
-        numList[i]=numList[randomIndex]
-        numList[randomIndex]=tempNumber
+        randomIndex = random.randrange(N)
+        tempNumber = numList[i]
+        numList[i] = numList[randomIndex]
+        numList[randomIndex] = tempNumber
     print(f'-> {numList}')
