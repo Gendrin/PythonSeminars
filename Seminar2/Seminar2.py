@@ -48,30 +48,53 @@ if inputDigit!=None:
 # Строковое решение задачи N1
 print('Task 1 seminar 2 second')
 inputString = input('Enter number >> ')
-print(f'Rezult >> {checkSumInDigitString(inputString)}')
+if CheckInputFloat(inputString)!=None:
+    print(f'Rezult >> {checkSumInDigitString(inputString)}')
+else:
+    print('Incorrect data entry')
 
 # Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
 print('Task 2')
 inputDigit=input('Enter integer digit ')
 inputDigit = CheckInputInt(inputDigit)
-
-factorial = 1
-for i in range(inputDigit):
-    i = i + 1
-    factorial = i * factorial
-    print(factorial, end=" ")
-print()
+if inputDigit!=None:
+    factorial = 1
+    for i in range(inputDigit):
+        i = i + 1
+        factorial = i * factorial
+        print(factorial, end=" ")
+    print()
 
 #3. Задайте список из n чисел, заполненный по формуле (1 + 1/n) ** n и выведите на экран их сумму.
 
-print('Task 3')    
-insertNum=int(input('Enter number list >> '))
-numList=[]
+print('Task 3') 
+insertNum=input('Enter number list >> ')
+insertNum=CheckInputInt(insertNum)
+if insertNum!=None:
+    numList=[]
+    for i in range(1, insertNum + 1):
+        numList.append(round((1 + 1 / i) ** i))
+    print(f'n={insertNum}:{numList} -> {sum(numList)}')
 
-for i in range(1, insertNum + 1):
-   numList.append(round((1 + 1 / i) ** i))
-print(f'n={insertNum}:{numList} -> {sum(numList)}')
+# 4. Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+#  Найдите произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
+print('Task 4')    
 
+N=input('Enter number for create list [-N,N] >> ')
+N=CheckInputInt(N)
+if N!=None:
+    numList = []
+    for i in range(-N,N+1):
+        numList.append(i)
+    print(numList)
+
+    positionOne = int(input('Enter positionOne numbers list >> '))
+    positionTwo = int(input('Enter positionTwo numbers list >> '))
+
+    if positionOne<len(numList) and positionOne>0 and positionTwo < len(numList) and positionTwo>0:
+       print(numList[positionOne-1]*numList[positionTwo-1])
+    else:
+           print('No correct entering position list!')
 
 ##old_list = ['1', '2', '3', '4', '5', '6', '7']
 #old_list='123.45'
