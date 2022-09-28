@@ -2,7 +2,7 @@
 import random
 
 
-# Ìåòîä ïðîâåðêè öåëîãî ÷èñëà
+# ÐœÐµÑ‚Ð¾Ð´ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸ Ñ†ÐµÐ»Ð¾Ð³Ð¾ Ñ‡Ð¸ÑÐ»Ð°
 def CheckInputInt(testInput):
     try:
         return int(testInput)
@@ -11,7 +11,7 @@ def CheckInputInt(testInput):
         return None
 
 
-# Ìåòîä ïðîâåðêè ââîäà âåùåñòâåííîãî ÷èñëà
+# ÐœÐµÑ‚Ð¾Ð´ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸ Ð²Ð²Ð¾Ð´Ð° Ð²ÐµÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð³Ð¾ Ñ‡Ð¸ÑÐ»Ð°
 def CheckInputFloat(testInput):
     try:
         return float(testInput)
@@ -20,7 +20,7 @@ def CheckInputFloat(testInput):
         return None
 
 
-# Ìåòîä ïîèñêà ñóììû öèôð âõîäÿùèõ â öåëîå ÷èñëî
+# ÐœÐµÑ‚Ð¾Ð´ Ð¿Ð¾Ð¸ÑÐºÐ° ÑÑƒÐ¼Ð¼Ñ‹ Ñ†Ð¸Ñ„Ñ€ Ð²Ñ…Ð¾Ð´ÑÑ‰Ð¸Ñ… Ð² Ñ†ÐµÐ»Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾
 def findSumDigit(chekDidit):
     sumDigit = 0
     while chekDidit != 0:
@@ -32,7 +32,7 @@ def findSumDigit(chekDidit):
     return sumDigit
 
 
-# Ìåòîä ïîèñêà ñóììû öèôð â ââîäèìîé ñòðîêå
+# ÐœÐµÑ‚Ð¾Ð´ Ð¿Ð¾Ð¸ÑÐºÐ° ÑÑƒÐ¼Ð¼Ñ‹ Ñ†Ð¸Ñ„Ñ€ Ð² Ð²Ð²Ð¾Ð´Ð¸Ð¼Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐµ
 def checkSumInDigitString(checkString):
     result = 0
     for simbol in checkString:
@@ -41,7 +41,7 @@ def checkSumInDigitString(checkString):
     return result
 
 
-# ×èñëîâîå ðåøåíèå çàäà÷è N1 (äî 4õ öèôð ïîñëå çàïÿòîé)
+# Ð§Ð¸ÑÐ»Ð¾Ð²Ð¾Ðµ Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸ N1 (Ð´Ð¾ 4Ñ… Ñ†Ð¸Ñ„Ñ€ Ð¿Ð¾ÑÐ»Ðµ Ð·Ð°Ð¿ÑÑ‚Ð¾Ð¹)
 print('Task 1 seminar 2 fierst')
 inputString = input('Enter number >> ')
 inputDigit = CheckInputFloat(inputString)
@@ -49,15 +49,15 @@ inputDigit = CheckInputFloat(inputString)
 if inputDigit != None:
     intPast = int(inputDigit)
     floatPast = round(inputDigit % 1, 4)
-    # Îáðàáîòêà öåëîé ÷àñòè ÷èñëà
+    # ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° Ñ†ÐµÐ»Ð¾Ð¹ Ñ‡Ð°ÑÑ‚Ð¸ Ñ‡Ð¸ÑÐ»Ð°
     sumDigit = 0
     sumDigit += findSumDigit(intPast)
-    # Îáðàáîòêà äðîáíîé ÷àñòè ÷èñëà
+    # ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° Ð´Ñ€Ð¾Ð±Ð½Ð¾Ð¹ Ñ‡Ð°ÑÑ‚Ð¸ Ñ‡Ð¸ÑÐ»Ð°
     floatPast = int(floatPast * 10000)
     sumDigit += findSumDigit(floatPast)
     print(f'Rezult >> {sumDigit}')
 
-# Ñòðîêîâîå ðåøåíèå çàäà÷è N1
+# Ð¡Ñ‚Ñ€Ð¾ÐºÐ¾Ð²Ð¾Ðµ Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸ N1
 print('Task 1 seminar 2 second')
 inputString = input('Enter number >> ')
 if CheckInputFloat(inputString) != None:
@@ -65,7 +65,7 @@ if CheckInputFloat(inputString) != None:
 else:
     print('Incorrect data entry')
 
-# Íàïèøèòå ïðîãðàììó, êîòîðàÿ ïðèíèìàåò íà âõîä ÷èñëî N è âûäàåò íàáîð ïðîèçâåäåíèé ÷èñåë îò 1 äî N.
+# ÐÐ°Ð¿Ð¸ÑˆÐ¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñƒ, ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÑ‚ Ð½Ð° Ð²Ñ…Ð¾Ð´ Ñ‡Ð¸ÑÐ»Ð¾ N Ð¸ Ð²Ñ‹Ð´Ð°ÐµÑ‚ Ð½Ð°Ð±Ð¾Ñ€ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ð¹ Ñ‡Ð¸ÑÐµÐ» Ð¾Ñ‚ 1 Ð´Ð¾ N.
 print('Task 2')
 inputDigit = input('Enter integer digit ')
 inputDigit = CheckInputInt(inputDigit)
@@ -77,7 +77,7 @@ if inputDigit != None:
         print(factorial, end=" ")
     print()
 
-# 3. Çàäàéòå ñïèñîê èç n ÷èñåë, çàïîëíåííûé ïî ôîðìóëå (1 + 1/n) ** n è âûâåäèòå íà ýêðàí èõ ñóììó.
+# 3. Ð—Ð°Ð´Ð°Ð¹Ñ‚Ðµ ÑÐ¿Ð¸ÑÐ¾Ðº Ð¸Ð· n Ñ‡Ð¸ÑÐµÐ», Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½Ñ‹Ð¹ Ð¿Ð¾ Ñ„Ð¾Ñ€Ð¼ÑƒÐ»Ðµ (1 + 1/n) ** n Ð¸ Ð²Ñ‹Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð° ÑÐºÑ€Ð°Ð½ Ð¸Ñ… ÑÑƒÐ¼Ð¼Ñƒ.
 
 print('Task 3')
 insertNum = input('Enter number list >> ')
@@ -88,8 +88,8 @@ if insertNum != None:
         numList.append(round((1 + 1 / i) ** i))
     print(f'n={insertNum}:{numList} -> {sum(numList)}')
 
-# 4. Çàäàéòå ñïèñîê èç N ýëåìåíòîâ, çàïîëíåííûõ ÷èñëàìè èç ïðîìåæóòêà [-N, N].
-#  Íàéäèòå ïðîèçâåäåíèå ýëåìåíòîâ íà óêàçàííûõ ïîçèöèÿõ. Ïîçèöèè õðàíÿòñÿ â ôàéëå file.txt â îäíîé ñòðîêå îäíî ÷èñëî.
+# 4. Ð—Ð°Ð´Ð°Ð¹Ñ‚Ðµ ÑÐ¿Ð¸ÑÐ¾Ðº Ð¸Ð· N ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð², Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½Ñ‹Ñ… Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸ Ð¸Ð· Ð¿Ñ€Ð¾Ð¼ÐµÐ¶ÑƒÑ‚ÐºÐ° [-N, N].
+#  ÐÐ°Ð¹Ð´Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð½Ð° ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ñ‹Ñ… Ð¿Ð¾Ð·Ð¸Ñ†Ð¸ÑÑ…. ÐŸÐ¾Ð·Ð¸Ñ†Ð¸Ð¸ Ñ…Ñ€Ð°Ð½ÑÑ‚ÑÑ Ð² Ñ„Ð°Ð¹Ð»Ðµ file.txt Ð² Ð¾Ð´Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐµ Ð¾Ð´Ð½Ð¾ Ñ‡Ð¸ÑÐ»Ð¾.
 print('Task 4')
 
 N = input('Enter number for create list [-N,N] >> ')
@@ -108,7 +108,7 @@ if N != None:
     else:
         print('No correct entering position list!')
 
-# 5 Ðåàëèçóéòå àëãîðèòì ïåðåìåøèâàíèÿ ñïèñêà. Áåç ôóíêöèè shuffle èç ìîäóëÿ random.
+# 5 Ð ÐµÐ°Ð»Ð¸Ð·ÑƒÐ¹Ñ‚Ðµ Ð°Ð»Ð³Ð¾Ñ€Ð¸Ñ‚Ð¼ Ð¿ÐµÑ€ÐµÐ¼ÐµÑˆÐ¸Ð²Ð°Ð½Ð¸Ñ ÑÐ¿Ð¸ÑÐºÐ°. Ð‘ÐµÐ· Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ shuffle Ð¸Ð· Ð¼Ð¾Ð´ÑƒÐ»Ñ random.
 # 10
 # -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # -> [0, 7, 6, 3, 4, 2, 9, 5, 1, 8]
