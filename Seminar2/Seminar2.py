@@ -1,3 +1,4 @@
+import random
 # Метод проверки целого числа
 def CheckInputInt(testInput):
     try:
@@ -96,18 +97,24 @@ if N!=None:
     else:
            print('No correct entering position list!')
 
-##old_list = ['1', '2', '3', '4', '5', '6', '7']
-#old_list='123.45'
-#new_list = []
-#for item in old_list:
-#    if item != ',' and item != '.':
-#        new_list.append(int(item))
- 
-#print (new_list)
- 
-##[1, 2, 3, 4, 5, 6, 7]
-#old_list = ['1', '2', '3', '4', '5', '6', '7']
-#new_list = list(map(int, old_list))
-#print (new_list)
- 
-#[1, 2, 3, 4, 5, 6, 7]
+#5 Реализуйте алгоритм перемешивания списка. Без функции shuffle из модуля random.
+#10
+#-> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+#-> [0, 7, 6, 3, 4, 2, 9, 5, 1, 8]
+print('Task N5')
+N=input('Enter number for create list [0,N] >> ')
+N=CheckInputInt(N)
+if N!=None:
+    numList = []
+    for i in range(N):
+        numList.append(i)
+    print(f'-> {numList}')
+    
+    for i in range(N):
+        randomIndex=random.randrange(N)
+        tempNumber=numList[i]
+        numList[i]=numList[randomIndex]
+        numList[randomIndex]=tempNumber
+    print(f'-> {numList}')
+
+
