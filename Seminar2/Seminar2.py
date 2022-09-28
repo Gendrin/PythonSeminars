@@ -1,3 +1,4 @@
+# coding=windows-1251
 import random
 # Метод проверки целого числа
 def CheckInputInt(testInput):
