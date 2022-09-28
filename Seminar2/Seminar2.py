@@ -50,6 +50,18 @@ print('Task 1 seminar 2 second')
 inputString = input('Enter number >> ')
 print(f'Rezult >> {checkSumInDigitString(inputString)}')
 
+# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+print('Task 2')
+inputDigit=input('Enter integer digit ')
+inputDigit = CheckInputInt(inputDigit)
+
+factorial = 1
+for i in range(inputDigit):
+    i = i + 1
+    factorial = i * factorial
+    print(factorial, end=" ")
+print()
+
 
 
 
