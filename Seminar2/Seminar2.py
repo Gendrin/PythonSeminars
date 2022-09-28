@@ -62,7 +62,15 @@ for i in range(inputDigit):
     print(factorial, end=" ")
 print()
 
+#3. Задайте список из n чисел, заполненный по формуле (1 + 1/n) ** n и выведите на экран их сумму.
 
+print('Task 3')    
+insertNum=int(input('Enter number list >> '))
+numList=[]
+
+for i in range(1, insertNum + 1):
+   numList.append(round((1 + 1 / i) ** i))
+print(f'n={insertNum}:{numList} -> {sum(numList)}')
 
 
 ##old_list = ['1', '2', '3', '4', '5', '6', '7']
