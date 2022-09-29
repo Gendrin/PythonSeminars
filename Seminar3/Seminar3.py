@@ -55,10 +55,17 @@ if N != None:
 # Осталось добавить формирование рандом списка
 print('Seminar3 Task N3')
 
-lst = [1.1, 1.2, 3.1, 5, 10.01]
-
-new_lst = [round(i%1.0,2) for i in lst if i%1!=0]
-print(new_lst, '=>', max(new_lst) - min(new_lst))
+#lst = [1.1, 1.2, 3.1, 5, 10.01]
+N = input("Enter long create random list -> ")
+N = CheckInputInt(N)
+if N != None:
+    lst = []
+    for i in range(N):
+        lst.append(round(random.uniform(0, 9),2))
+    print(f'Create random list -> {lst}')
+    new_lst = [round(i%1.0,2) for i in lst if i%1!=0]
+    print(f'Result work list -> {new_lst} -- max value -> {max(new_lst)} -- min value -> {min(new_lst)}')
+    print('Result', '->', max(new_lst) - min(new_lst))
 
 # Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 print('Seminar3 Task N4')
