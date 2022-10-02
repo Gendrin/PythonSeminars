@@ -83,7 +83,8 @@ if rangeTsk3 != None:
 print('Seminar3 Task N4')
 numberTask4 = int(input('Введите преобразуемое в двоичный формат положительное десятичное число, результат список! --> '))
 numberTask4 = CheckInputInt(numberTask4)
-print(f'{numberTask4} --> {BinFormatGo(numberTask4)}')
+if numberTask4 != None:
+    print(f'{numberTask4} --> {BinFormatGo(numberTask4)}')
 
 # Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 print('Seminar3 Task N5')
