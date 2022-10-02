@@ -9,7 +9,7 @@ def CheckInputInt(testInput):
         print(f'Incorrect data entry -> {Err}')
         return None
 def CreateRandomList(rangeList):
-    result = sample(range(rangeList), rangeList)
+    result = sample(range(rangeList*2), rangeList)
     print(result,end=' ')
     return result
 def SumOddDigits(listForSum):
@@ -17,12 +17,26 @@ def SumOddDigits(listForSum):
     for i in range(1,len(listForSum),2):
         result+=listForSum[i]
     return result
+def FindSumPair(taskList):
+    if len(taskList)%2!=0:
+        rangeMult = len(taskList) // 2 + 1
+    else:
+        rangeMult = len(taskList) // 2
+    j=len(taskList)-1
+    result = []
+    for i in range(rangeMult):
+        if i != j:
+            result.append(taskList[i]*taskList[j])
+        else:
+            result.append(taskList[i])
+        j-=1
+    return result
 
 # Задайте список из нескольких чисел. Напишите программу, которая найдёт
 # сумму элементов списка, стоящих на нечётной позиции.
 
 print('Seminar3 Task N1')
-rangeTsk1 = CheckInputInt(input("Enter range list for Task -> "))
+rangeTsk1 = CheckInputInt(input("Enter range list for Task1 -> "))
 if rangeTsk1 != None:
     tsk1List = CreateRandomList(rangeTsk1)
     print(f' -> {SumOddDigits(tsk1List)}')
@@ -30,25 +44,11 @@ if rangeTsk1 != None:
 # Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй
 # и предпоследний и т.д.
 print('Seminar3 Task N2')
-N = input("Enter long create random list -> ")
-N = CheckInputInt(N)
-if N != None:
-    numList = []
-    resultMultiplecsingList = []
-    print('Create random list N1 -> ')
-    for i in range(N):
-        numList.append(random.randint(0, 9))
-    print(numList)
-#умножаем пары
-    if N%2!=0:
-        rangeMult = N//2+1
-    else:
-        rangeMult = N//2
-    j=N-1
-    for i in range(rangeMult):
-        resultMultiplecsingList.append(numList[i]*numList[j])
-        j-=1
-    print(resultMultiplecsingList)
+rangeTsk2 = CheckInputInt(input("Enter range list for Task2 -> "))
+if rangeTsk2 != None:
+    tsk2List = CreateRandomList(rangeTsk2)
+    print(f' --> {FindSumPair(tsk2List)}')
+
 
 # Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным
 # значением дробной части элементов.
