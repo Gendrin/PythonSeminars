@@ -1,5 +1,5 @@
 
-
+import random
 
 # Метод проверки целого числа
 def CheckInputInt(testInput):

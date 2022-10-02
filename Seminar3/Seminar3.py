@@ -1,31 +1,31 @@
 
 import random
+from random import sample
+
 def CheckInputInt(testInput):
     try:
         return int(testInput)
-    except ValueError:
-        print('Incorrect data entry')
+    except ValueError as Err:
+        print(f'Incorrect data entry -> {Err}')
         return None
+def CreateRandomList(rangeList):
+    result = sample(range(rangeList), rangeList)
+    print(result,end=' ')
+    return result
+def SumOddDigits(listForSum):
+    result=0
+    for i in range(1,len(listForSum),2):
+        result+=listForSum[i]
+    return result
 
+# Задайте список из нескольких чисел. Напишите программу, которая найдёт
+# сумму элементов списка, стоящих на нечётной позиции.
 
-# Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
 print('Seminar3 Task N1')
-insertString = input("Enter numbers list separated by spaces -> ")
-arrString = insertString.split()
-arrIntDigits = []
-# check input variable
-flagInsertData = True
-for numI in arrString:
-    if CheckInputInt(numI) == None:
-        flagInsertData = False
-    else:
-        arrIntDigits.append(CheckInputInt(numI))
-sumNechetDigitList = 0
-if flagInsertData:
-    for i in range(len(arrIntDigits)):
-        if i % 2 != 0:
-            sumNechetDigitList += arrIntDigits[i]
-    print(f'{arrIntDigits} -> {sumNechetDigitList}')
+rangeTsk1 = CheckInputInt(input("Enter range list for Task -> "))
+if rangeTsk1 != None:
+    tsk1List = CreateRandomList(rangeTsk1)
+    print(f' -> {SumOddDigits(tsk1List)}')
 
 # Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй
 # и предпоследний и т.д.
