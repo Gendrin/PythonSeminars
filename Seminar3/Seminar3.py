@@ -53,6 +53,20 @@ def BinFormatGo(number):
             number //=2
     return binList
 
+def CreateListFibonachi(number):
+    if number > 0:
+        f1 = f2 = f3 = f4 = 1
+        resultList = [1,1]
+        for i in range(-1,number):
+            f1,f2=f2,f1+f2
+            if i < number-3:
+                resultList.append(f2)
+            f3,f4=f4,f3-f4
+            resultList.insert(0,f4)
+        return resultList
+    else:
+        print('Размер числа фибоначи должен быть положительным целым числом, не вверный ввод!')
+
 # Задайте список из нескольких чисел. Напишите программу, которая найдёт
 # сумму элементов списка, стоящих на нечётной позиции.
 
@@ -88,23 +102,7 @@ if numberTask4 != None:
 
 # Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 print('Seminar3 Task N5')
-N = int(input('Введите размер числа Фибоначчи '))
-N = CheckInputInt(N)
-if N > 0:
-    f1 = f2 = 1
-    listFibon = [f1, f2]
-    for i in range(2, N):
-        nF,f1,f2=f1+f2,f2,f1+f2 # избыточность nF можно заменить на f2 оставлено для понимания процесса
-        listFibon.append(nF)
-        #f1=f2
-        #f2=nF
-    print(listFibon)
-    f1 = f2 =1
-    for i in range(-N, 1):
-        nF,f1,f2=f1-f2,f2,f1-f2 # избыточность nF можно заменить на f2 оставлено для понимания процесса
-        listFibon.insert(0, nF)
-        #f1=f2
-        #f2 = nF
-    print(listFibon)
-else:
-    print('Размер числа фибоначи должен быть положительным целым числом, не вверный ввод!')
+numberFibonachi=int(input('Введите размер числа Фибоначи '))
+numberFibonachi=CheckInputInt(numberFibonachi)
+if numberFibonachi != None:
+    print(f'{numberFibonachi} --> {CreateListFibonachi(numberFibonachi)}')
