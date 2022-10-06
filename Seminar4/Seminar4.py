@@ -1,6 +1,8 @@
 import math,random
 import decimal
 from decimal import Decimal
+from random import randint
+from random import sample
 decimal.getcontext().prec=24
 
 def CheckInputInt(testInput):
@@ -30,6 +32,12 @@ def CheckMnogNumber(checkNumber):
             mnogNumber+=1
     return resultList
 
+def CreateRandomList(fromInt, toInt,quantity):
+    generateList = []
+    for i in range(quantity):
+        listNumber=randint(fromInt,toInt)
+        generateList.append(listNumber)
+    return generateList
 
 print('Task1 Seminar N4')
 #Вычислить число c заданной точностью d
@@ -43,9 +51,12 @@ else: print('Accuracy not correct enter!')
 
 #2. Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 insertNumber = CheckInputInt(input('Enter number for task N2: '))
-print(f'Простые множетели числа {saveNumber} --> {CheckMnogNumber(insertNumber)}')
+print(f'Простые множетели числа {insertNumber} --> {CheckMnogNumber(insertNumber)}')
 
-
+print('Task №3')
+insertRangeList = CheckInputInt(input('Enter count number for list task №3: (numbers generated from 0..9 -> '))
+print(CreateRandomList(0,9,insertRangeList))
+#print(f'Простые множетели числа {saveNumber} --> {CheckMnogNumber(insertNumber)}')
 
 #Источник: https://pythonpip.ru/osnovy/tochnost-python
 
