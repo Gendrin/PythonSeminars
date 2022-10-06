@@ -30,7 +30,8 @@ if result:
 else: print('Accuracy not correct enter!')
 
 #2. Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
-
+insertNumber = CheckInputInt(input('Enter number for task N2: '))
+print(f'Простые множетели числа {saveNumber} --> {CheckMnogNumber(insertNumber)}')
 
 
 
