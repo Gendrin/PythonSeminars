@@ -39,6 +39,14 @@ def CreateRandomList(fromInt, toInt,quantity):
         generateList.append(listNumber)
     return generateList
 
+def NotRepetitivelist(insertList):
+    resultList = []
+    for i in insertList:
+        count = insertList.count(i)
+        if count == 1:
+            resultList.append(i)
+    return resultList
+
 print('Task1 Seminar N4')
 #Вычислить число c заданной точностью d
 inNumTsk1 = input("Enter a real number: -> ")
@@ -55,7 +63,12 @@ print(f'Простые множетели числа {insertNumber} --> {CheckMn
 
 print('Task №3')
 insertRangeList = CheckInputInt(input('Enter count number for list task №3: (numbers generated from 0..9 -> '))
-print(CreateRandomList(0,9,insertRangeList))
+fierstList = CreateRandomList(0,9,insertRangeList)
+print(f'Creating random List -> {fierstList}')
+print(f'Result List --> {NotRepetitivelist(fierstList)}')
+
+
+
 #print(f'Простые множетели числа {saveNumber} --> {CheckMnogNumber(insertNumber)}')
 
 #Источник: https://pythonpip.ru/osnovy/tochnost-python
