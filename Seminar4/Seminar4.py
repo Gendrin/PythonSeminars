@@ -17,6 +17,18 @@ def CalcAccuracy (inNum,inAcc):
         return inNum
     else: return False
 
+def CheckMnogNumber(checkNumber):
+    mnogNumber = 2 #Первый простой множитель
+    resultList = []
+    saveNumber=checkNumber
+    while mnogNumber<= checkNumber:
+        if checkNumber%mnogNumber == 0:
+            resultList.append(mnogNumber)
+            checkNumber//=mnogNumber
+            mnogNumber = 2
+        else:
+            mnogNumber+=1
+    return resultList
 
 
 print('Task1 Seminar N4')
