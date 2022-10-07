@@ -59,6 +59,15 @@ for j in range(0,len(arrString)):
     task4File.close
     print('writing in file Task4.txt -->' + resultString)
 
+print('Task4 Seminar N5 ')
+insertString = input("Enter names files number1 and number2 separated by spaces poly1.txt and poly2.txt -> ")
+arrString=insertString.split()
+for j in range(0,len(arrString)):
+    poly1 = arrString[0]
+    poly2 = arrString[1]
+
+#readlines(): считывает все строки файла в список
+
 # 1. Формируем список коэффициентов 10 штук ф-ия
 # 2. Формируем строку , первый К всегда положительный, следующие
 # добавляют себе знак, если к =0 пропуск элемента.
