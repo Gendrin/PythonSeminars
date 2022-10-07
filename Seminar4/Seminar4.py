@@ -58,16 +58,21 @@ if result:
 else: print('Accuracy not correct enter!')
 
 #2. Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
+print('Task2 Seminar N4')
 insertNumber = CheckInputInt(input('Enter number for task N2: '))
 print(f'Простые множетели числа {insertNumber} --> {CheckMnogNumber(insertNumber)}')
 
-print('Task №3')
+print('Task3 Seminar N4')
 insertRangeList = CheckInputInt(input('Enter count number for list task №3: (numbers generated from 0..9 -> '))
 fierstList = CreateRandomList(0,9,insertRangeList)
 print(f'Creating random List -> {fierstList}')
 print(f'Result List --> {NotRepetitivelist(fierstList)}')
 
 
+# 1. Формируем список коэффициентов 10 штук ф-ия
+# 2. Формируем строку , первый К всегда положительный, следующие
+# добавляют себе знак, если к =0 пропуск элемента.
+# 3. Ф-ия формирующая знак.
 
 #print(f'Простые множетели числа {saveNumber} --> {CheckMnogNumber(insertNumber)}')
 
