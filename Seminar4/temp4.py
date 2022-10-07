@@ -19,6 +19,35 @@ def CreateRandomSign():
         return '-'
     else:
         return '+'
+def CreateStringPoly(inNum):
+    if inNum!=None and inNum!=0 and inNum > 0:
+        fierstList = CreateRandomList(0,9,inNum+1)
+        print(f'Creating random List -> {fierstList}')
+        i = 0
+        resultString=''
+        saveInNum=inNum
+        inNum+=1
+        flagZnak=False
+        while i < len(fierstList):
+            if fierstList[i]!=0 and i < saveInNum:
+                inNum=inNum-1
+                if flagZnak:
+                    resultString += CreateRandomSign()+str(fierstList[i]) + '*x^' + str(inNum)
+                else:
+                    resultString += str(fierstList[i]) + '*x^' + str(inNum)
+                    flagZnak=True
+            else:
+                inNum = inNum - 1
+            if i == saveInNum:
+                if fierstList[i]==0:
+                    resultString +='=0'
+                else:
+                    resultString += CreateRandomSign()+str(fierstList[i]) + '=0'
+            i+=1
+        return resultString
+        #task4File = open("Task4.txt", "a")
+        #task4File.write(resultString+'\n')
+        #print(resultString)
 
 
 print('Task4 Seminar N4')
@@ -51,8 +80,17 @@ for j in range(0,len(arrString)):
                 else:
                     resultString += CreateRandomSign()+str(fierstList[i]) + '=0'
             i+=1
+        task4File = open("Task4.txt", "a")
+        task4File.write(resultString+'\n')
+        task4File.close
         print(resultString)
 
+print('Task4 Seminar N4 Fun')
+insertString = input("Enter numbers separated by spaces -> ")
+arrString=insertString.split()
+for j in range(0,len(arrString)):
+    inNumTsk5=CheckInputInt(arrString[j])
+    print(CreateStringPoly(inNumTsk5))
 # 1. Формируем список коэффициентов 10 штук ф-ия
 # 2. Формируем строку , первый К всегда положительный, следующие
 # добавляют себе знак, если к =0 пропуск элемента.
