@@ -79,6 +79,36 @@ def CreateStringPoly(inNum):
             i+=1
         return resultString
 
+def WritingFile(nameFile,printString):
+    nameFile=open(nameFile, "a")
+    nameFile.write(printString + '\n')
+    nameFile.close
+
+def ConcatePolyStr(inPolyStr1,inPolyStr2):
+    result = inPolyStr1.replace('=0', '+')
+    result = result.replace('\n', '')
+    result+= inPolyStr2.replace('\n', '')
+    return result
+
+def ConcatePolyFiles(inSeparateString):
+    arrString = inSeparateString.split()
+    for j in range(0, len(arrString)):
+        poly1 = arrString[0]
+        poly2 = arrString[1]
+    with open(poly1, "r") as file1:
+        contents1 = file1.readlines()
+    with open(poly2, "r") as file2:
+        contents2 = file2.readlines()
+    if len(contents1) == len(contents2):
+        # print('Result')
+        insertStrFileResult = input("Enter names files result Task5 polyRez.txt -> ")
+        for i in range(0, len(contents1)):
+            concateStr = ConcatePolyStr(contents1[i], contents2[i])
+            WritingFile(insertStrFileResult, concateStr)
+            print(concateStr)
+    else:
+        print('The contents of the files do not match!')
+
 print('Task1 Seminar N4')
 #Вычислить число c заданной точностью d
 inNumTsk1 = input("Enter a real number: -> ")
@@ -100,30 +130,16 @@ fierstList = CreateRandomList(0,9,insertRangeList)
 print(f'Creating random List -> {fierstList}')
 print(f'Result List --> {NotRepetitivelist(fierstList)}')
 
-print('Task4 Seminar N4 Fun')
+print('Task4 Seminar N4')
 insertString = input("Enter numbers separated by spaces -> ")
+insertStringNameFile = input("Enter name file for writing 'Task4.txt' 'Poly1.txt'-> ")
 arrString=insertString.split()
 for j in range(0,len(arrString)):
     inNumTsk4=CheckInputInt(arrString[j])
     resultString = CreateStringPoly(inNumTsk4)
-    task4File = open("Task4.txt", "a")
-    task4File.write(resultString + '\n')
-    task4File.close
+    WritingFile(insertStringNameFile, resultString)
     print('writing in file Task4.txt -->'+resultString)
 
-
-# 1. Формируем список коэффициентов 10 штук ф-ия
-# 2. Формируем строку , первый К всегда положительный, следующие
-# добавляют себе знак, если к =0 пропуск элемента.
-# 3. Ф-ия формирующая знак.
-
-#print(f'Простые множетели числа {saveNumber} --> {CheckMnogNumber(insertNumber)}')
-
-#Источник: https://pythonpip.ru/osnovy/tochnost-python
-
-# d = int(input('Введите точность числа Пи '))
-# print(f'Число Пи с заданной точностью {d} равно {round(math.pi,d)}')
-# test = []
-# test = random.sample([1,2,3,4,5,6,7,8],2)
-# print(test)
-# print(random.sample([1,2,3,4,5,6,7,8],2))
+print('Task5 Seminar N4')
+insertString = input("Enter names files number1 and number2 separated by spaces poly1.txt and poly2.txt -> ")
+ConcatePolyFiles(insertString)

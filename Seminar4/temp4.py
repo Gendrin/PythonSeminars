@@ -46,25 +46,68 @@ def CreateStringPoly(inNum):
             i+=1
         return resultString
 
+def WritingFile(nameFile,printString):
+    nameFile=open(nameFile, "a")
+    nameFile.write(printString + '\n')
+    nameFile.close
+
+def ConcatePolyStr(inPolyStr1,inPolyStr2):
+    result = inPolyStr1.replace('=0', '+')
+    result = result.replace('\n', '')
+    result+= inPolyStr2.replace('\n', '')
+    return result
+
+def ConcatePolyFiles(inSeparateString):
+    arrString = inSeparateString.split()
+    for j in range(0, len(arrString)):
+        poly1 = arrString[0]
+        poly2 = arrString[1]
+    with open(poly1, "r") as file1:
+        contents1 = file1.readlines()
+    with open(poly2, "r") as file2:
+        contents2 = file2.readlines()
+    if len(contents1) == len(contents2):
+        # print('Result')
+        insertStrFileResult = input("Enter names files result Task5 polyRez.txt -> ")
+        for i in range(0, len(contents1)):
+            concateStr = ConcatePolyStr(contents1[i], contents2[i])
+            WritingFile(insertStrFileResult, concateStr)
+            print(concateStr)
+    else:
+        print('The contents of the files do not match!')
 
 
-print('Task4 Seminar N4 Fun')
-insertString = input("Enter numbers separated by spaces -> ")
-arrString=insertString.split()
-for j in range(0,len(arrString)):
-    inNumTsk5=CheckInputInt(arrString[j])
-    resultString=CreateStringPoly(inNumTsk5)
-    task4File = open("Task4.txt", "a")
-    task4File.write(resultString + '\n')
-    task4File.close
-    print('writing in file Task4.txt -->' + resultString)
+# print('Task4 Seminar N4 Fun')
+# insertString = input("Enter numbers separated by spaces -> ")
+# insertStringNameFile = input("Enter name file for writing 'Task4.txt' 'Poly1.txt'-> ")
+# arrString=insertString.split()
+# for j in range(0,len(arrString)):
+#     inNumTsk5=CheckInputInt(arrString[j])
+#     resultString=CreateStringPoly(inNumTsk5)
+#     WritingFile(insertStringNameFile,resultString)
+#     print('writing in file Task4.txt -->' + resultString)
 
 print('Task4 Seminar N5 ')
 insertString = input("Enter names files number1 and number2 separated by spaces poly1.txt and poly2.txt -> ")
-arrString=insertString.split()
-for j in range(0,len(arrString)):
-    poly1 = arrString[0]
-    poly2 = arrString[1]
+ConcatePolyFiles(insertString)
+# arrString=insertString.split()
+# for j in range(0,len(arrString)):
+#     poly1 = arrString[0]
+#     poly2 = arrString[1]
+# with open(poly1, "r") as file1:
+#     contents1 = file1.readlines()
+# with open(poly2, "r") as file2:
+#     contents2 = file2.readlines()
+# if len(contents1) == len(contents2):
+#     #print('Result')
+#     insertStrFileResult = input("Enter names files result Task5 polyRez.txt -> ")
+#     for i in range(0,len(contents1)):
+#         concateStr=ConcatePolyStr(contents1[i],contents2[i])
+#         WritingFile(insertStrFileResult,concateStr)
+# else:
+#     print('The contents of the files do not match!')
+
+
 
 #readlines(): считывает все строки файла в список
 
