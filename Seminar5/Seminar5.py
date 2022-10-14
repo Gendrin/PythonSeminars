@@ -35,7 +35,7 @@ def SetCryptoFiles(inSeparateStringNameFiles):
     return fileList
 
 def InStringsToFile(nameFile):
-    numString =  input("Enter number string for input text_worlds.txt -> ")
+    numString =  input("Enter number string for input text_worlds.txt -> (Enter - 0 string)")
     if numString.isdigit():
         for i in range(0,int(numString)):
             insertStrFileIn = input("Enter text for file Task2 Seminar5 text for coding text_worlds.txt -> ")
@@ -100,7 +100,7 @@ def DecodingFile(codeFile,resultFile):
 
 print('Task1 Seminar N5')
 insertNumberWorlds = CheckInputInt(input('Enter number rendom worlds for task N1: '))
-insertFierstRandomString = input('Enter start rendom string for task N1: ')
+insertFierstRandomString = input('Enter start rendom string for task N1:(Enter default - абв) ')
 if insertNumberWorlds != None:
     if insertFierstRandomString == '':
         result_generate_string = Generate_List_Random_Worlds(insertNumberWorlds)
