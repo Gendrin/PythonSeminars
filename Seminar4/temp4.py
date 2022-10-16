@@ -111,18 +111,33 @@ def GenerateAndChekListTask1(inNum):
     print(f'Generate random list -> {genList}')
     return  [genList[i+1] for i in range(len(genList)-1) if genList[i]<genList[i+1]]
 
-print('Task1 Seminar N6')
-mList=CreateRandomList(1,20,10)
-mLi = sample(range(20),10)
-print(mList)
-print(f'mLi - > {mLi}')
-#rList = [n for n in mList if mList[n]>mList[n+1] and n<len(mList)]
-indList = [n+1 for n in range(len(mList)-1) if mList[n]<mList[n+1]]
-print(indList)
-#resList = [mList[i] for i in range(len(mList)) if mList[i]>mList[i-1]]
-resList = [mList[i+1] for i in range(len(mList)-1) if mList[i]<mList[i+1]]
-#i=0
-#resList = [i for indList[i] in mList]
-#resList=[i for i in mList(indList)]
-print(resList)
-#rList = [n for n in mList if 4 > ind > 0]
+def ChekForTask2(inNum):
+    return [i for i in range(20,inNum+1) if i%20 == 0 or i%21==0]
+
+#Для чисел в пределах от 20 до N найти числа, кратные 20 или 21. Use comprehension.
+print('Task2 Seminar N6')
+insertString = input("Enter digit for Task №2 Seminar6 -> ")
+if insertString.isdigit():
+    print(f'Chek result Task №2 -> {ChekForTask2(int(insertString))}')
+else:
+    print('Not correct entering!')
+# mList=[i for i in range(20,int(insertString)+1) if i%20 == 0 or i%21==0]
+# print(mList)
+
+#if insertString.isdigit():
+
+
+# mList=CreateRandomList(1,20,10)
+# mLi = sample(range(20),10)
+# print(mList)
+# print(f'mLi - > {mLi}')
+# #rList = [n for n in mList if mList[n]>mList[n+1] and n<len(mList)]
+# indList = [n+1 for n in range(len(mList)-1) if mList[n]<mList[n+1]]
+# print(indList)
+# #resList = [mList[i] for i in range(len(mList)) if mList[i]>mList[i-1]]
+# resList = [mList[i+1] for i in range(len(mList)-1) if mList[i]<mList[i+1]]
+# #i=0
+# #resList = [i for indList[i] in mList]
+# #resList=[i for i in mList(indList)]
+# print(resList)
+# #rList = [n for n in mList if 4 > ind > 0]
