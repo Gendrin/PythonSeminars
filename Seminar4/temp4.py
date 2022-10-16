@@ -114,18 +114,55 @@ def GenerateAndChekListTask1(inNum):
 def ChekForTask2(inNum):
     return [i for i in range(20,inNum+1) if i%20 == 0 or i%21==0]
 
-#Для чисел в пределах от 20 до N найти числа, кратные 20 или 21. Use comprehension.
-print('Task2 Seminar N6')
-insertString = input("Enter digit for Task №2 Seminar6 -> ")
-if insertString.isdigit():
-    print(f'Chek result Task №2 -> {ChekForTask2(int(insertString))}')
-else:
-    print('Not correct entering!')
+def GetDictTask3(inString):
+    inList = inString.split()
+    sortList = sorted(inList)
+    m_dict = {}
+    for i in sortList:
+        simbol = i[0]
+        if simbol not in m_dict:
+            m_dict[simbol] = [i]
+        else:
+            m_dict[simbol] += [i]
+    return m_dict
+
+print('Task3 Seminar N6')
+#3. Написать функцию, аргументы имена сотрудников, возвращает словарь,
+#ключи — первые буквы имён, значения — списки, содержащие имена, начинающиеся
+# соответствующей буквы.
+insertString = input("Enter names separated by spaces -> Иван Мария Петр Илья Марина Петр Алина Бибочка.. as default - enter")
+if len(insertString)==0:
+    insertString = "Иван Мария Петр Илья Марина Петр Алина Бибочка"
+print(f'Result - > {GetDictTask3(insertString)}')
+
+
+# insertList = insertString.split()
+# print(insertList)
+# sortList=sorted(insertList)
+# print(sortList)
+# mTuple=tuple(sortList)
+# print(mTuple)
+# m_dict = {}
+# for i in sortList:
+#     simbol=i[0]
+#     if simbol not in m_dict:
+#         m_dict[simbol]=[i]
+#     else:
+#         m_dict[simbol]+=[i]
+# print(m_dict)
+
+
 # mList=[i for i in range(20,int(insertString)+1) if i%20 == 0 or i%21==0]
 # print(mList)
 
 #if insertString.isdigit():
 
+
+# insertString = input("Enter digit for Task №2 Seminar6 -> ")
+# if insertString.isdigit():
+#     print(f'Chek result Task №2 -> {ChekForTask2(int(insertString))}')
+# else:
+#     print('Not correct entering!')
 
 # mList=CreateRandomList(1,20,10)
 # mLi = sample(range(20),10)

@@ -15,6 +15,18 @@ def GenerateAndChekListTask1(inNum):
 def ChekForTask2(inNum):
     return [i for i in range(20,inNum+1) if i%20 == 0 or i%21==0]
 
+def GetDictTask3(inString):
+    inList = inString.split()
+    sortList = sorted(inList)
+    m_dict = {}
+    for i in sortList:
+        simbol = i[0]
+        if simbol not in m_dict:
+            m_dict[simbol] = [i]
+        else:
+            m_dict[simbol] += [i]
+    return m_dict
+
 print('Task4 Seminar N4')
 insertString = input("Enter number digit in the list, for Task №1 Seminar6 -> ")
 if insertString.isdigit():
@@ -28,3 +40,12 @@ if insertString.isdigit():
     print(f'Chek result Task №2 -> {ChekForTask2(int(insertString))}')
 else:
     print('Not correct entering!')
+
+print('Task3 Seminar N6')
+#3. Написать функцию, аргументы имена сотрудников, возвращает словарь,
+#ключи — первые буквы имён, значения — списки, содержащие имена, начинающиеся
+# соответствующей буквы.
+insertString = input("Enter names separated by spaces -> Иван Мария Петр Илья Марина Петр Алина Бибочка.. as default - enter")
+if len(insertString)==0:
+    insertString = "Иван Мария Петр Илья Марина Петр Алина Бибочка"
+print(f'Result - > {GetDictTask3(insertString)}')
