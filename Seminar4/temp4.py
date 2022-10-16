@@ -106,36 +106,23 @@ def Generate_List_Random_Worlds(count_w:int, text:str='абв'):
         Random_world_list.append("".join(world))
     return " ".join(Random_world_list)
 
+def GenerateAndChekListTask1(inNum):
+    genList = sample(range(inNum*2,inNum))
+    print(f'Generate random list -> {genList}')
+    return  [genList[i+1] for i in range(len(genList)-1) if genList[i]<genList[i+1]]
 
-print('Task1 Seminar N5')
-insertNumberWorlds = CheckInputInt(input('Enter number rendom worlds for task N1: '))
-insertFierstRandomString = input('Enter start rendom string for task N1: ')
-if insertNumberWorlds!=None:
-    if insertFierstRandomString!=None:
-        result_generate_string=Generate_List_Random_Worlds(insertNumberWorlds,insertFierstRandomString)
-
-
-str,num,temp_str='абв',20,''
-result_str=''
-my_list=[]
-list_char=list(str)
-for i in range(num):
-    world = sample(str,3)
-    my_list.append(''.join(world))
-print(my_list)
-result_string=' '.join(my_list)
-print(' '.join(my_list))
-result_string = result_string.replace(" абв","")
-print(result_string)
-# list_num = [1,1,1,2,2,2,3,3,3,4,5,5,6,7]
-# dict = {}.fromkeys(list_num,0)
-# print(dict)
-# for i in list_num:
-#     dict[i] +=1
-# print(dict)
-# result=[]
-# for k in dict:
-#     if dict[k] == 1:
-#         result.append(k)
-# print(result)
-
+print('Task1 Seminar N6')
+mList=CreateRandomList(1,20,10)
+mLi = sample(range(20),10)
+print(mList)
+print(f'mLi - > {mLi}')
+#rList = [n for n in mList if mList[n]>mList[n+1] and n<len(mList)]
+indList = [n+1 for n in range(len(mList)-1) if mList[n]<mList[n+1]]
+print(indList)
+#resList = [mList[i] for i in range(len(mList)) if mList[i]>mList[i-1]]
+resList = [mList[i+1] for i in range(len(mList)-1) if mList[i]<mList[i+1]]
+#i=0
+#resList = [i for indList[i] in mList]
+#resList=[i for i in mList(indList)]
+print(resList)
+#rList = [n for n in mList if 4 > ind > 0]
