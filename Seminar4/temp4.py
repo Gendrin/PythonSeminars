@@ -122,8 +122,7 @@ def GetDictTask3(inString):
         simbol = i[0]
         if simbol not in m_dict:
             m_dict[simbol] = [i]
-        else:
-            m_dict[simbol] += [i]
+        m_dict[simbol] += [i]
     return m_dict
 
 print('Task3 Seminar N6')
