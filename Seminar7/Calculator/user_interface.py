@@ -18,6 +18,10 @@ def StartRationalMenu():
             mc.Operation(11)
             temp = input('Нажмите ввод для продолжения')
             StartRationalMenu()
+        elif chk==2:
+            mc.Operation(12)
+            temp = input('Нажмите ввод для продолжения')
+            StartRationalMenu()
         elif chk==0: StartMenu()
 
 def StartComplexMenu():
@@ -33,6 +37,10 @@ def StartComplexMenu():
         chk=int(second)
         if chk==1:
             mc.Operation(21)
+            temp = input('Нажмите ввод для продолжения')
+            StartComplexMenu()
+        if chk==2:
+            mc.Operation(22)
             temp = input('Нажмите ввод для продолжения')
             StartComplexMenu()
         elif chk==0: StartMenu()
