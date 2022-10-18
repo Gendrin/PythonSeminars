@@ -15,11 +15,15 @@ def StartRationalMenu():
     if second.isdigit():
         chk=int(second)
         if chk==1:
-            mc.Operation(11)
+            mc.Operation(chk+10)
             temp = input('Нажмите ввод для продолжения')
             StartRationalMenu()
         elif chk==2:
-            mc.Operation(12)
+            mc.Operation(chk+10)
+            temp = input('Нажмите ввод для продолжения')
+            StartRationalMenu()
+        elif chk==3:
+            mc.Operation(chk+10)
             temp = input('Нажмите ввод для продолжения')
             StartRationalMenu()
         elif chk==0: StartMenu()
@@ -36,11 +40,15 @@ def StartComplexMenu():
     if second.isdigit():
         chk=int(second)
         if chk==1:
-            mc.Operation(21)
+            mc.Operation(chk+20)
             temp = input('Нажмите ввод для продолжения')
             StartComplexMenu()
-        if chk==2:
-            mc.Operation(22)
+        elif chk==2:
+            mc.Operation(chk+20)
+            temp = input('Нажмите ввод для продолжения')
+            StartComplexMenu()
+        elif chk==3:
+            mc.Operation(chk+20)
             temp = input('Нажмите ввод для продолжения')
             StartComplexMenu()
         elif chk==0: StartMenu()
