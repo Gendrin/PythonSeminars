@@ -20,4 +20,6 @@ def CheckInputFloat(testInput):
         return None
 
 def view_data(title, data):
-    print(f'{title} = {data}')
+    result="{0} = {1}".format(title,data)
+    print(result)
+    return result
