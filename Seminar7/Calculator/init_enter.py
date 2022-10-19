@@ -1,20 +1,23 @@
-
 def get_valueR():
     a = input('Enter rational number = ')
-    if a.isdigit:
-        return int(a)
-    else:
-        a = None
-    return a
+    return(CheckInputFloat(a))
 
 def get_valueC():
     a = input('Enter complex number part1 = ')
     b = input('Enter complex number part2 = ')
-    if a.isdigit and b.isdigit:
-        return complex(int(a),int(b))
+    a = CheckInputFloat(a)
+    b = CheckInputFloat(b)
+    if a!=None and b!=None:
+        return complex(a,b)
     else:
-        a = None
-    return a
+        return None
+
+def CheckInputFloat(testInput):
+    try:
+        return float(testInput)
+    except ValueError:
+        print('Incorrect data entry')
+        return None
 
 def view_data(title, data):
     print(f'{title} = {data}')

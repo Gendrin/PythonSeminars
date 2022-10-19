@@ -1,3 +1,3 @@
 
 def sub(a,b):
-    return a - b
+    if a!=None and b!=None: return a - b
