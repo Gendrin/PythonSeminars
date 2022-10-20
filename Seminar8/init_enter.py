@@ -14,7 +14,7 @@ def CreateDB():
     cursor = connect.cursor()
 
     cursor.execute("""CREATE TABLE IF NOT EXISTS users(
-       id_u INT PRIMARY KEY,
+       id INT PRIMARY KEY,
        fname TEXT,
        lname TEXT,
        phone INT,
@@ -22,7 +22,7 @@ def CreateDB():
     """)
 
     cursor.execute("""CREATE TABLE IF NOT EXISTS records(
-           id_r INT PRIMARY KEY,
+           id INT PRIMARY KEY,
            id_master INT,
            id_client INT,
            start_time TEXT,
@@ -30,13 +30,13 @@ def CreateDB():
         """)
 
     cursor.execute("""CREATE TABLE IF NOT EXISTS service(
-               id_s INT PRIMARY KEY,
+               id INT PRIMARY KEY,
                name_s TEXT,
                cost INT);
             """)
 
     cursor.execute("""CREATE TABLE IF NOT EXISTS orders(
-               id_o INT PRIMARY KEY,
+               id INT PRIMARY KEY,
                id_master INT,
                id_client INT,
                id_service INT,
