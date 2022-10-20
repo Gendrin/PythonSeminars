@@ -1,3 +1,4 @@
+import mod_control as mc
 def StartMenu():
     print("Barbershop welcomes you!\n\n\n")
     print("Working with:\n")
@@ -28,11 +29,10 @@ def MenuConfigUser():
     print("5 - Export users in files\n")
     print("0 - Start menu\n")
     chk = input()
-    if chk == '1':print('Меню предварительной записи в разработке')
-    elif chk == '2':print('Меню оформления выполненных работ в разработке')
-    elif chk == '3':print('Меню оформления выполненных работ в разработке')
-    elif chk == '4':print('Меню онфигурирования услуг в разработке')
-    elif chk == '5':print('Меню онфигурирования услуг в разработке')
+    if chk == '1'or chk == '2' or chk == '3' or chk == '4' or chk == '5':
+        mc.Operation(chk)
+        input('Нажмите ввод для продолжения')
+        MenuConfigUser()
     elif chk == '0': StartMenu()
     else:
         print('Выбрано не верное число')
