@@ -35,6 +35,28 @@ def UpdateUser(inId,inData):
         if(input('Вы уверены в редактировании пользователя? Подтвердить операцию - "1", отмена - "any key"'))=='1':
             connect.commit()
         connect.close()
+def DeletRecord(nameTable,inId):
+    global connect
+    if inId!=None:
+        try:
+            connect = sqlite3.connect('barbershop.db')
+            cursor = connect.cursor()
+            sql = "DELETE FROM {0} WHERE id={1}".format(nameTable, inId)
+            print(sql)
+            cursor.execute(sql)
+            if (input('Вы уверены в удалении записи? Подтвердить операцию - "1", отмена - "any key"')) == '1':
+                connect.commit()
+                print('Запись успешно удалена!')
+                cursor.close()
+            else:
+                print('Отмена удаления записи!')
+                cursor.close()
+        except sqlite3.Error as Error:
+            print('Ошибка при работе с SQLite',Error)
+        finally:
+            connect.close()
+
+
 def CreateSQLStr(startSQL,inData):
     flag= 0
     for i in range(len(inData)):
@@ -117,6 +139,12 @@ def EditUser():
             if inData != None:
                 print(f'Новые данные {inData[1]} {inData[2]} {inData[3]} {inData[4]}')
                 UpdateUser(resultFind[0], inData)
+def DeleteUser():
+    resultFind = FindInTable('users', InsertDataForSearch('users'))
+    if resultFind!=None:
+        if resultFind[0] != None:
+            print(f'Удаляемые данные {resultFind[1]}')
+            DeletRecord('users', resultFind[0])
 
 
 # test=InsertDataForSearch('users')

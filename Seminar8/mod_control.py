@@ -6,3 +6,6 @@ def Operation(code_op):
     elif code_op =='2':
         print('Редактируем пользователя! Задайте критерии поиска!')
         me.EditUser()
+    elif code_op =='3':
+        print('Удаляем пользователя! Задайте критерии поиска!')
+        me.DeleteUser()

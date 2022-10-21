@@ -25,8 +25,9 @@ def MenuConfigUser():
     print("1 - Add User\n")
     print("2 - Edit user\n")
     print("3 - Delete user\n")
-    print("4 - Import users from file\n")
-    print("5 - Export users in files\n")
+    print("4 - View all user\n")
+    print("5 - Import users from file\n")
+    print("6 - Export users in files\n")
     print("0 - Start menu\n")
     chk = input()
     if chk == '1'or chk == '2' or chk == '3' or chk == '4' or chk == '5':
