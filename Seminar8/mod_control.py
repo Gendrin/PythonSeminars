@@ -1,5 +1,7 @@
 import edit as me
 import export as exp
+#import import_file as imp
+
 
 
 
@@ -15,6 +17,9 @@ def Operation(code_op):
     elif code_op =='4':
         print('Отображаем всех пользователей информационной системы!!')
         me.ViewExpTable('users')
+    elif code_op =='5':
+        print('Импорт пользователей из файла в базу!!')
+       #im.
     elif code_op =='6':
         print('Экспорт пользователей информационной системы в файл!!')
         exp.exportFile('users',me.ViewExpTable('users'))
