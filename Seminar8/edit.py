@@ -56,7 +56,7 @@ def DeletRecord(nameTable,inId):
         finally:
             connect.close()
 
-def ViewTable(nameTable):
+def ViewExpTable(nameTable):
     try:
         connect = sqlite3.connect('barbershop.db')
         cursor = connect.cursor()
@@ -65,14 +65,22 @@ def ViewTable(nameTable):
         cursor.execute(sql)
         result = cursor.fetchall()
         cursor.close()
+        expList=[]
         for i in range(len(result)):
+            expString='';
             for j in range(len(result[i])):
                 print(result[i][j],end=' ')
+                if j<len(result[i])-1:
+                    expString+=str(result[i][j])+';'
+                else: expString+=str(result[i][j])
             if i>5 and i%5==0: input('Нажмите любую клавишу!')
             print()
+            expList.append(expString)
     except sqlite3.Error as Error:
         print('Ошибка при работе с SQLite', Error)
     finally:
+        #print(expList)
+        return expList
         connect.close()
 
 
@@ -167,7 +175,9 @@ def DeleteUser():
             DeletRecord('users', resultFind[0])
 
 
-#ViewTable('users')
+exp = ViewExpTable('users')
+print()
+print(exp)
 # test=InsertDataForSearch('users')
 # test=FindInTable('sers',test)
 # print(test)

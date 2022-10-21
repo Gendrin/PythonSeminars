@@ -30,7 +30,7 @@ def MenuConfigUser():
     print("6 - Export users in files\n")
     print("0 - Start menu\n")
     chk = input()
-    if chk == '1'or chk == '2' or chk == '3' or chk == '4' or chk == '5':
+    if chk == '1'or chk == '2' or chk == '3' or chk == '4' or chk == '5' or chk == '6':
         mc.Operation(chk)
         input('Нажмите ввод для продолжения')
         MenuConfigUser()

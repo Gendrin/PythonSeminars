@@ -1,4 +1,5 @@
 import edit as me
+import export as exp
 
 
 def Operation(code_op):
@@ -11,4 +12,7 @@ def Operation(code_op):
         me.DeleteUser()
     elif code_op =='4':
         print('Отображаем всех пользователей информационной системы!!')
-        me.ViewTable('users')
+        me.ViewExpTable('users')
+    elif code_op =='6':
+        print('Экспорт пользователей информационной системы в файл!!')
+        exp.exportFile('users',me.ViewExpTable('users'))
