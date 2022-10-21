@@ -13,7 +13,7 @@ listImpString = importFile('usersImp.csv')
 # Проверка импортируемых данных -
 # 1. количество передаваемых значений - id
 # 2. проверка цифрового поля
-# 3. Проверка логического поля
+# 3. Проверка логического поля test Git
 listTuple=[]
 if listImpString!=None:
     for i in range(len(listImpString)):
