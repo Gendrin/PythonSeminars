@@ -9,3 +9,6 @@ def Operation(code_op):
     elif code_op =='3':
         print('Удаляем пользователя! Задайте критерии поиска!')
         me.DeleteUser()
+    elif code_op =='4':
+        print('Отображаем всех пользователей информационной системы!!')
+        me.ViewTable('users')

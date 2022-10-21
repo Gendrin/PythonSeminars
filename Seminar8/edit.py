@@ -36,7 +36,7 @@ def UpdateUser(inId,inData):
             connect.commit()
         connect.close()
 def DeletRecord(nameTable,inId):
-    global connect
+    #global connect
     if inId!=None:
         try:
             connect = sqlite3.connect('barbershop.db')
@@ -55,6 +55,26 @@ def DeletRecord(nameTable,inId):
             print('Ошибка при работе с SQLite',Error)
         finally:
             connect.close()
+
+def ViewTable(nameTable):
+    try:
+        connect = sqlite3.connect('barbershop.db')
+        cursor = connect.cursor()
+        sql = "SELECT * FROM {0} ".format(nameTable)
+        print(sql)
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        cursor.close()
+        for i in range(len(result)):
+            for j in range(len(result[i])):
+                print(result[i][j],end=' ')
+            if i>5 and i%5==0: input('Нажмите любую клавишу!')
+            print()
+    except sqlite3.Error as Error:
+        print('Ошибка при работе с SQLite', Error)
+    finally:
+        connect.close()
+
 
 
 def CreateSQLStr(startSQL,inData):
@@ -147,6 +167,7 @@ def DeleteUser():
             DeletRecord('users', resultFind[0])
 
 
+#ViewTable('users')
 # test=InsertDataForSearch('users')
 # test=FindInTable('sers',test)
 # print(test)
