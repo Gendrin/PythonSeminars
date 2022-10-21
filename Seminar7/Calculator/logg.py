@@ -10,3 +10,5 @@ def inStringLog(inString):
         flog.write(inStr)
     flog.close
 #time = dt.now().strftime('%D %H:%M')
+
+print('Test')
